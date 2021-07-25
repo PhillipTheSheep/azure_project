@@ -57,4 +57,4 @@ def profile():
     if not g.user:
         return redirect(url_for('login'))
 
-    return render_template('profile.html')
+    return render_template('index.html')
