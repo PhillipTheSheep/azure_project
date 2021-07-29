@@ -9,8 +9,9 @@ from flask import (
 )
 
 class User:
-    def __init__(self, id, username, password):
+    def __init__(self, id, email, username, password):
         self.id = id
+        self.email = email
         self.username = username
         self.password = password
 
@@ -18,9 +19,9 @@ class User:
         return f'<User: {self.username}>'
 
 users = []
-users.append(User(id=1, username='Anthony', password='password'))
-users.append(User(id=2, username='Becca', password='secret'))
-users.append(User(id=3, username='Carlos', password='somethingsimple'))
+users.append(User(id=1, email='a@mail.com', username='Anthony', password='password'))
+users.append(User(id=2, email='b@mail.com', username='Becca', password='secret'))
+users.append(User(id=3, email='c@mail.com', username='Carlos', password='somethingsimple'))
 
 
 app = Flask(__name__)
@@ -42,8 +43,12 @@ def login():
 
         username = request.form['username']
         password = request.form['password']
-        
+
+        if not username or not password:
+            return redirect(url_for('register'))
+
         user = [x for x in users if x.username == username][0]
+
         if user and user.password == password:
             session['user_id'] = user.id
             return redirect(url_for('profile'))
@@ -58,3 +63,16 @@ def profile():
         return redirect(url_for('login'))
 
     return render_template('index.html')
+
+@app.route('/registration', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
+        
+        users.append(User(id=4, email=email, username=username, password=password))
+
+        return redirect(url_for('login'))
+
+    return render_template('registration.html')
