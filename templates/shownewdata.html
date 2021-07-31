@@ -1,0 +1,9 @@
+<a href="/">Click here to return to the homepage and search for the new data.</a> <br><br>
+
+<body> Here is the new imported data you can search for on the main page use HSHD_NUM.</body> <br><br>
+
+
+   {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+   {% endfor %}
