@@ -8,7 +8,7 @@ connection = pyodbc.connect('Driver={SQL Server};Server=cscloudcomp.database.win
 cursor = connection.cursor()
 
 cursor.execute("""
-               SELECT a.*,b.*,c.*
+               SELECT TOP 10000 a.*,b.*,c.*
                FROM households a
                INNER JOIN transactions b
                 ON a.[HSHD_NUM] = b.[HSHD_NUM]

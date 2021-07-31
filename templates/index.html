@@ -14,6 +14,12 @@ body, html {
   text-align:center
 }
 
+p{
+width:20%;
+text-align:center;
+margin: 0 auto;
+}
+
 #show_products_by_commodities{
     border: solid #a08db7;
     height: 500px;
@@ -77,45 +83,44 @@ Dashboard{
 
 <div id="Dashboard" class="tabcontent">
   <h3>Dashboard</h3>
-  <h2>Here are all the charts used for the project.</h2>
-  <p>Zoom out to adjust dashboard dimensions.</p>
+  <p>Zoom out to adjust dashboard dimensions.</p> <br>
   <dash style="text-align:center">
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig1') }}" height="489.5" width="952" style="text-align:center"></iframe>
-    <p>
-        Description 1: This pie chart shows the ratio of products sold by category. Commodities make up over a quarter
-        of all revenue made meaning this is where groceries stores make a huge portion of their money.
-    </p>
+    <!-- <p> -->
+        <!-- <b>Figure 1.</b> This pie chart shows the ratio of products sold by category. Commodities make up over a quarter -->
+        <!-- of all revenue made meaning this is where groceries stores make a huge portion of their money. -->
+    <!-- </p> -->
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig2') }}" height="489.5" width="952" style="text-align:center"></iframe>
-    <p>
-        Description 2: This graph shows household spending against the purchased date. There is a peak in the month of April 2020 where most States
-        started shutting down. We assisted on supplies shortage within that period, causing a downward trend in 2020
-    </p>
+    <!-- <p> -->
+        <!-- <b>Figure 2.</b> This graph shows household spending against the purchased date. There is a peak in the month of April 2020 where most States -->
+        <!-- started shutting down. We assisted on supplies shortage within that period, causing a downward trend in 2020 -->
+    <!-- </p> -->
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig3') }}" height="489.5" width="952" style="text-align:center"></iframe>
-    <p>
-        Description 3: This chart shows the sum of spending by age range. The 45-55 makes up the largest
-        spending block meaning grocery stores may want to appeal to this age range specifically.
-    </p>
+    <!-- <p> -->
+        <!-- <b>Figure 3.</b> This chart shows the sum of spending by age range. The 45-55 makes up the largest -->
+        <!-- spending block meaning grocery stores may want to appeal to this age range specifically. -->
+    <!-- </p> -->
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig4') }}" height="489.5" width="952" style="text-align:center"></iframe>
-    <p>
-        Description 4: This chart shows the sum of spending by income range. The 50-74k income range makes
-        up the largest spending block meaning grocery stores may want to appeal to this income range specifically.
-    </p>
+    <!-- <p> -->
+        <!-- <b>Figure 4.</b> This chart shows the sum of spending by income range. The 50-74k income range makes -->
+        <!-- up the largest spending block meaning grocery stores may want to appeal to this income range specifically. -->
+    <!-- </p> -->
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig5') }}" height="489.5" width="952" style="text-align:center"></iframe>
-    <p>
-        Description 5: This chart shows the sum of household spending by household size.
-        Families of 2 seem to spend roughly the same amount per person as other families but as you can see,
-        families of 2 make up the largest spending group. This is likely because there are more families of 2
-        than other sizes of families.
-    </p>
+    <!-- <p> -->
+        <!-- <b>Figure 5.</b> This chart shows the sum of household spending by household size. -->
+        <!-- Families of 2 seem to spend roughly the same amount per person as other families but as you can see, -->
+        <!-- families of 2 make up the largest spending group. This is likely because there are more families of 2 -->
+        <!-- than other sizes of families. -->
+    <!-- </p> -->
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig6') }}" height="489.5" width="952" style="text-align:center"></iframe>
-    <p>
-        Description 6: This graph displays the total household spending in 2019.  We manifested a decrease on year 2020 as the world witnessed a global pandemic. People losing their jobs and facing hardships could be major factors to that decrease.
-    </p>
+    <!-- <p> -->
+        <!-- <b>Figure 6.</b> This graph displays the total household spending in 2019.  We manifested a decrease on year 2020 as the world witnessed a global pandemic. People losing their jobs and facing hardships could be major factors to that decrease. -->
+    <!-- </p> -->
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig7') }}" height="489.5" width="952" style="text-align:center"></iframe>
-    <p>
-        Description 3: This chart shows specific customer engagement over time. We use this to see or track changes
-        to a household that could increase or decrease spending over time.
-    </p>
+    <!-- <p> -->
+        <!-- Description 3: This chart shows specific customer engagement over time. We use this to see or track changes -->
+        <!-- to a household that could increase or decrease spending over time. -->
+    <!-- </p> -->
   </dash>
 </div>
 
@@ -146,18 +151,18 @@ Dashboard{
   <dash style="text-align:center">
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig6') }}" height="489.5" width="952" style="text-align:center"></iframe>
     <p>
-        Description 1: This graph displays the total household spending in 2019.  We manifested a decrease on year 2020 as the world witnessed a global pandemic. People losing their jobs and facing hardships could be major factors to that decrease.
+        <b>Figure 1.</b> This graph displays the total household spending in 2019.  We manifested a decrease on year 2020 as the world witnessed a global pandemic. People losing their jobs and facing hardships could be major factors to that decrease.
     </p>
     <br>
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig2') }}" height="489.5" width="952" style="text-align:center"></iframe>
     <p>
-        Description 2: This graph shows household spending against the purchased date. There is a peak in the month of April 2020 where most States
+        <b>Figure 2.</b> This graph shows household spending against the purchased date. There is a peak in the month of April 2020 where most States
         started shutting down. We assisted on supplies shortage within that period, causing a downward trend in 2020
     </p>
     <br>
     <iframe id ="show_products_by_commodities" src="{{ url_for('fig7') }}" height="489.5" width="952" style="text-align:center"></iframe>
     <p>
-        Description 3: This chart shows specific customer engagement over time. We use this to see or track changes
+        <b>Figure 3.</b> This chart shows specific customer engagement over time. We use this to see or track changes
         to a household that could increase or decrease spending over time.
     </p>
     <br>
@@ -169,7 +174,7 @@ Dashboard{
   <body style="text-align:center">
  <iframe id ="show_products_by_commodities" src="{{ url_for('fig5') }}" height="489.5" width="952" style="text-align:center"></iframe>
  <p>
-     Description 1: This chart shows the sum of household spending by household size.
+     <b>Figure 4.</b> This chart shows the sum of household spending by household size.
      Families of 2 seem to spend roughly the same amount per person as other families but as you can see,
      families of 2 make up the largest spending group. This is likely because there are more families of 2
      than other sizes of families.
@@ -177,19 +182,19 @@ Dashboard{
  <br>
  <iframe id ="show_products_by_commodities" src="{{ url_for('fig3') }}" height="489.5" width="952" style="text-align:center"></iframe>
  <p>
-     Description 2: This chart shows the sum of spending by age range. The 45-55 makes up the largest
+     <b>Figure 5.</b> This chart shows the sum of spending by age range. The 45-55 makes up the largest
      spending block meaning grocery stores may want to appeal to this age range specifically.
  </p>
  <br>
  <iframe id ="show_products_by_commodities" src="{{ url_for('fig4') }}" height="489.5" width="952" style="text-align:center"></iframe>
  <p>
-     Description 3: This chart shows the sum of spending by income range. The 50-74k income range makes
+     <b>Figure 6.</b> This chart shows the sum of spending by income range. The 50-74k income range makes
      up the largest spending block meaning grocery stores may want to appeal to this income range specifically.
  </p>
  <br>
  <iframe id ="show_products_by_commodities" src="{{ url_for('fig1') }}" height="489.5" width="952" style="text-align:center"></iframe>
  <p>
-     Description 4: This pie chart shows the ratio of products sold by category. Commodities make up over a quarter
+     <b>Figure 7.</b> This pie chart shows the ratio of products sold by category. Commodities make up over a quarter
      of all revenue made meaning this is where groceries stores make a huge portion of their money.
  </p>
 </body>
