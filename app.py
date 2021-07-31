@@ -36,9 +36,9 @@ connection = pyodbc.connect('Driver={SQL Server};Server=cscloudcomp.database.win
 cursor = connection.cursor()
 
 cursor.execute("""
-               SELECT a.*,b.*,c.*
+               SELECT TOP 10000 a.*,b.*,c.*
                FROM households a
-               INNER JOIN transactions b
+               INNER JOIN transactions b 
                 ON a.[HSHD_NUM] = b.[HSHD_NUM]
                INNER JOIN products c
                 ON b.[PRODUCT_NUM] = c.[PRODUCT_NUM]
@@ -116,8 +116,8 @@ def register():
 #Data Pull Search
 @app.route('/')
 def search_data_pull():
-    if not g.user:
-        return redirect(url_for('login'))
+    # if not g.user:
+        # return redirect(url_for('login'))
         
     return render_template('index.html')
 
@@ -184,11 +184,12 @@ def import_data_post():
         
         newDF = pd.merge(houseDF,transDF, how='inner', on='HSHD_NUM')
         newDF = pd.merge(newDF, prodDF, how='inner', on='PRODUCT_NUM')
-
+    
         newDF = newDF[['HSHD_NUM','BASKET_NUM','PURCHASE_','PRODUCT_NUM','DEPARTMENT','COMMODITY','SPEND','UNITS','STORE_R','WEEK_NUM','YEAR','NATURAL_ORGANIC_FLAG','AGE_RANGE','MARITAL','INCOME_RANGE','HOMEOWNER','HSHD_COMPOSITION','HH_SIZE','CHILDREN']]
         
         # Adding newly imported data to the original data
-        # cleanDF = pd.concat([cleanDF, newDF], ignore_index=True)
+        global cleanDF
+        cleanDF = pd.concat([cleanDF, newDF], ignore_index=True)
         
         return render_template('shownewdata.html',  tables=[newDF.to_html(classes='data')], titles=newDF.columns.values)
     return render_template('importnewdata.html')
