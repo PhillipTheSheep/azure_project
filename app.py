@@ -31,7 +31,7 @@ app = Flask(__name__)
 app.secret_key = 'somesecretkeythatonlyishouldknow'
 
 
-connection = pyodbc.connect('Driver={SQL Server};Server=cscloudcomp.database.windows.net;Database=AzureDB;uid=cscloud;pwd=testing12345!')
+connection = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};Server=cscloudcomp.database.windows.net;Database=AzureDB;uid=cscloud;pwd=testing12345!')
 
 cursor = connection.cursor()
 
